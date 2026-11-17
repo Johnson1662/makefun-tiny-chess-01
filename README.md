@@ -14,10 +14,10 @@ standard library alone, and searches a fixed number of nodes per move, so its
 play is deterministic and does not depend on a clock.
 
 Search: iterative deepening over a negamax alpha-beta with a transposition
-table, principal variation search, quiescence search on captures and checks,
-MVV-LVA plus killer move ordering. Evaluation: material, piece-square tables,
-passed, doubled and isolated pawns, the bishop pair, and a king table that
-switches from middlegame to endgame as material comes off.
+table, principal variation search, null-move pruning, late move reductions and
+a quiescence search on captures and check evasions, ordered by MVV-LVA and the
+transposition table move. Evaluation: material and piece-square tables, kept
+incrementally, plus king centralisation once the non-pawn material is gone.
 
 ## Layout
 
