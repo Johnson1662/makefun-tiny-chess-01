@@ -10,8 +10,14 @@ node ../tiny-chess-01-kit/cli/makefun.mjs compress engine/engine.py --out main.p
 ```
 
 The engine talks to the competition environment over HTTP only, uses the Python
-standard library alone, and searches with a fixed node budget (so its play is
-deterministic and does not depend on a clock).
+standard library alone, and searches a fixed number of nodes per move, so its
+play is deterministic and does not depend on a clock.
+
+Search: iterative deepening over a negamax alpha-beta with a transposition
+table, principal variation search, quiescence search on captures and checks,
+MVV-LVA plus killer move ordering. Evaluation: material, piece-square tables,
+passed, doubled and isolated pawns, the bishop pair, and a king table that
+switches from middlegame to endgame as material comes off.
 
 ## Layout
 
